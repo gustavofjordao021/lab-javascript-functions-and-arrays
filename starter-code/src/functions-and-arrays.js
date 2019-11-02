@@ -63,13 +63,25 @@ const wordsArr = [
   'correspond',
   'linen',
   'motif',
-  'hole',
+  'hole', 
   'smell',
   'smart',
   'chaos',
   'fuel',
   'palace'
 ];
+
+function averageWordLength(arr) {
+  let sumArr = 0;
+  if (arr.length === 0) {
+    return null;
+  }
+  for (let i = 0; i < arr.length; i++) {
+    sumArr += arr[i].length;
+  }
+  let arrayAvg = sumArr / arr.length;
+  return arrayAvg;
+};
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -86,6 +98,23 @@ const wordsUnique = [
   'bring'
 ];
 
+function uniquifyArray(arr) {
+  if (arr.length === 0) {
+    return [];
+  }
+  let uniqueArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (uniqueArray.includes(arr[i]) == false) {
+      uniqueArray.push(arr[i]);
+    } else if (uniqueArray.includes(arr[i]) == true) {
+      continue;
+    }
+  }
+  return uniqueArray;
+}
+
+uniquifyArray(wordsUnique);
+
 // Iteration #6: Find elements
 const wordsFind = [
   'machine',
@@ -97,6 +126,18 @@ const wordsFind = [
   'truth',
   'disobedience'
 ];
+
+function doesWordExist(arr, word) {
+  if (arr.length === 0) {
+    return false;
+  }
+  for (let elem of arr) {
+    if (elem === word) {
+      return true;
+    } 
+  }
+  return false;
+}
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -112,6 +153,16 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
+
+function howManyTimes(arr, word) {
+  let count = 0;
+  for (let el of arr) {
+    if (el === word) {
+      count++
+    }
+  }
+  return count;
+}
 
 // Iteration #8: Bonus
 
